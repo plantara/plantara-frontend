@@ -1,0 +1,38 @@
+{
+  "common": {
+    "menu": {
+      "home": "Начало",
+      "signIn": "Вход",
+      "signUp": "Регистрация"
+    },
+    "forms": {
+      "errors": {
+        "required": "Това поле е задължително",
+        "invalid": "Това поле е навалидно",
+        "minLength": "Това поле трябва да бъде поне {length} символа",
+        "pastDate": "Датата не може да бъде в миналото",
+        "swappedDates": "Крайната дата не може да бъде преди началната"
+      }
+    }
+  },
+  "auth": {
+    "forms": {
+      "fields": {
+        "email": "E-mail",
+        "password": "Password",
+        "confirmPassword": "Confirm password"
+      },
+      "errors": {
+        "passwordMismatch": "Двете пароли трябва да съвпадат"
+      },
+      "loginPage": {
+        "title": "Вход",
+        "submitButton": "Вход"
+      },
+      "registerPage": {
+        "title": "Регистрация",
+        "submitButton": "Регистрация"
+      }
+    }
+  }
+}

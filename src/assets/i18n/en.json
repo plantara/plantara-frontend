@@ -1,0 +1,36 @@
+{
+  "common": {
+    "menu": {
+      "home": "Home",
+      "signIn": "Log in",
+      "signUp": "Register"
+    },
+    "forms": {
+      "errors": {
+        "required": "This field is required",
+        "invalid": "This field is invalid",
+        "minLength": "This field should be at least {length} characters."
+      }
+    }
+  },
+  "auth": {
+    "forms": {
+      "fields": {
+        "email": "E-mail",
+        "password": "Password",
+        "confirmPassword": "Confirm password"
+      },
+      "errors": {
+        "passwordMismatch": "The two passwords must match"
+      },
+      "loginPage": {
+        "title": "Login",
+        "submitButton": "Login"
+      },
+      "registerPage": {
+        "title": "Register",
+        "submitButton": "Register"
+      }
+    }
+  }
+}

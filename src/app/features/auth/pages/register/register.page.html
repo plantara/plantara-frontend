@@ -1,0 +1,81 @@
+<div class="register-page grid">
+  <div class="col-8 col-offset-2">
+    <p-card>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid p-fluid p-formgrid">
+          <div class="col-12 md-offset-1 md-10">
+            <h1 style="text-align: center">
+              {{ 'auth.forms.registerPage.title' | translate }}
+            </h1>
+          </div>
+
+          <div class="p-field col-12">
+            <span class="p-float-label">
+              <input
+                formControlName="email"
+                id="email"
+                type="text"
+                pInputText
+              />
+              <label for="email"
+                >{{ 'auth.forms.fields.email' | translate }}</label
+              >
+            </span>
+            <div *ngIf="email?.dirty && email?.invalid">
+              <small *ngIf="email?.errors?.required" class="p-error">
+                {{ 'common.forms.errors.required' | translate }}
+              </small>
+              <small *ngIf="email?.errors?.email" class="p-error">
+                {{ 'common.forms.errors.invalid' | translate }}
+              </small>
+            </div>
+          </div>
+
+          <div class="p-field col-12 mt-2">
+            <span class="p-float-label">
+              <p-password formControlName="password"></p-password>
+              <label for="password"
+                >{{ 'auth.forms.fields.password' | translate }}</label
+              >
+            </span>
+            <div *ngIf="password?.dirty && password?.invalid">
+              <small *ngIf="password?.errors?.required" class="p-error">
+                {{ 'common.forms.errors.required' | translate }}
+              </small>
+            </div>
+          </div>
+
+          <div class="p-field col-12 mt-2">
+            <span class="p-float-label">
+              <p-password formControlName="confirmPassword"></p-password>
+              <label for="email"
+                >{{ 'auth.forms.fields.confirmPassword' | translate }}</label
+              >
+            </span>
+            <div *ngIf="confirmPassword?.dirty && confirmPassword?.invalid">
+              <small *ngIf="confirmPassword?.errors?.required" class="p-error">
+                {{ 'common.forms.errors.required' | translate }}
+              </small>
+            </div>
+            <small
+              *ngIf="password?.dirty && confirmPassword?.dirty && form?.errors?.passwordMismatch"
+              class="p-error"
+            >
+              {{ 'auth.forms.errors.passwordMismatch' | translate }}
+            </small>
+          </div>
+          <div class="p-field col-4 col-offset-4" style="text-align: center">
+            <button
+              pButton
+              type="submit"
+              icon="pi pi-key"
+              [label]="'auth.forms.registerPage.submitButton' | translate"
+              [disabled]="!isValid"
+            ></button>
+            <p-progressSpinner *ngIf="isSpinnerVisible"></p-progressSpinner>
+          </div>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</div>
