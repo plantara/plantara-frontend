@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CoreModule } from '@core/core.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
