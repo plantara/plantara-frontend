@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { User } from '@core/models/User';
 import { UserResponse } from '@core/models/UserResponse';
 import { TokenReponse } from '@core/models/TokenResponse';
@@ -10,7 +10,7 @@ import { TokenReponse } from '@core/models/TokenResponse';
   providedIn: 'root',
 })
 export class AuthService {
-  user: User;
+  user$: Subject<User> = new Subject();
   token: string;
 
   constructor(private http: HttpClient) {}

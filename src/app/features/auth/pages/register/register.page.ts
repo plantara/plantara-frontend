@@ -57,7 +57,7 @@ export class RegisterPage implements OnInit {
       this.authService
         .register(value.email, value.password)
         .subscribe((userResponse: UserResponse) => {
-          this.authService.user = new User(userResponse);
+          this.authService.user$.next(new User(userResponse));
           this.isSpinnerVisible = false;
 
           this.authService
